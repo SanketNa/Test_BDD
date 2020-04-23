@@ -86,12 +86,13 @@ public String n1= String.valueOf(randomnogeneration());
 
  }
 
+ // method to switch window
  public void switchWindow() {
      ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
             driver.switchTo().window(tabs2.get(1));
       }
 
-
+// method to handle StaleElementReferenceException while performing click
     public void retryingFindClick(WebElement element) {
         try {
             element.click();
@@ -103,7 +104,7 @@ public String n1= String.valueOf(randomnogeneration());
 
         }
 
-
+// method to verify and capture screenshot
         public void ReportResult( boolean Condition, String ScreenshotName) throws IOException {
 
         if (Condition==true){

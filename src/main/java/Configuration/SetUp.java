@@ -32,7 +32,7 @@ public class SetUp {
 
     public WebDriver driver;
     public Properties prop;
-    public static String TESTDATA_SHEET_PATH = "D:\\Test\\Test_BDD\\src\\main\\java\\testdata\\TestData.xlsx";
+    public static String TESTDATA_SHEET_PATH = "src\\test\\resources\\testdata\\TestData.xlsx";
 
     static Workbook book;
     static Sheet sheet;
@@ -42,10 +42,10 @@ public class SetUp {
     static XSSFRow Row;
 
 
-    //*********** To read the proper
+    // read the property file
     public SetUp() {
 
-        File file = new File("D:\\Test\\Test_BDD\\src\\test\\resources\\configuration.properties");
+        File file = new File("src\\test\\resources\\configuration.properties");
         FileInputStream fileInput = null;
         try {
             fileInput = new FileInputStream(file);
@@ -62,6 +62,7 @@ public class SetUp {
 
     }
 
+    // browser initialisation
     public void browserInitialise() {
 
         String Browser=prop.getProperty("Browser");
@@ -118,6 +119,8 @@ public class SetUp {
         }
     }
 
+    //This method is to add the screenshot
+
     public void addScreenshot(String screenshotName) throws IOException {
         String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
         String ImageName =  screenshotName+ "_" + timeStamp;
@@ -125,6 +128,10 @@ public class SetUp {
         File destinationPath = new File(System.getProperty("user.dir") + "/target/cucumber-reports/screenshot/" + ImageName + ".png");
         copyFile(sourcePath, destinationPath);
         Reporter.addScreenCaptureFromPath("./screenshot/"+ImageName+".png");
+    }
+// to close the browser
+    public void tearDown(){
+        driver.quit();
     }
 
 

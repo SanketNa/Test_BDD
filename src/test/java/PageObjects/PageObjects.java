@@ -23,7 +23,7 @@ public class PageObjects extends PageObjectIdentifiers {
         Thread.sleep(20000);
         ReportResult(true, "SearchResult");
         prepareWebElementWithDynamicXpath(SpecificItemXpath, "ItemNo", n1).click();
-        Thread.sleep(20000);
+        Thread.sleep(10000);
         switchWindow();
 
     }

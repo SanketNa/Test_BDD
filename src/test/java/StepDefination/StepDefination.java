@@ -39,6 +39,7 @@ public class StepDefination extends PageObjects {
     @And("^Verify the Order Page$")
     public void Verify_the_Order_Page() throws Throwable {
         flipkartOrderPage();
+        tearDown();
     }
 
 }

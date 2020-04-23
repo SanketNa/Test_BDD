@@ -30,10 +30,6 @@ And Verify the Product Page
 And Verify the Cart
 And Verify the Order Page
   
-## Reporting usin Extent Report
-
-Report: `target\cucumber-reports\report.html` 
-screenshots: `target\cucumber-reports\Screenshot`  
 
 ## Steps to run at your system:
 Clone the repository using "git clone <repository url>
